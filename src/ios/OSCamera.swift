@@ -1,5 +1,4 @@
 import OSCameraLib
-import OSCommonPluginLib
 
 @objc(OSCamera)
 class OSCamera: CDVPlugin {
@@ -134,10 +133,8 @@ class OSCamera: CDVPlugin {
             }
         }
     }
-}
-
-extension OSCamera: PlatformProtocol {
-    func sendResult(result: String? = nil, error: NSError? = nil, callBackID: String) {
+    
+    private func sendResult(result: String? = nil, error: NSError? = nil, callBackID: String) {
         var pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR)
 
         if let error = error {
