@@ -115,10 +115,12 @@
              <preference name="SwiftVersion" value="5" />
          </config-file>
 
-         <preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
-         <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-             <string>This app needs camera access to take pictures.</string>
-         </config-file>
+         <!-- CAMERA PERMISSION -->
+    <edit-config target="NSCameraUsageDescription"
+                 file="*-Info.plist"
+                 mode="merge">
+        <string>This app needs access to the camera to take pictures of the user and valid Id's.</string>
+    </edit-config>
 
 
          <config-file target="*-Info.plist" parent="PHPhotoLibraryPreventAutomaticLimitedAccessAlert">
