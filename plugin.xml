@@ -117,23 +117,9 @@
 
          <preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
          <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-             <string>$CAMERA_USAGE_DESCRIPTION</string>
+             <string>This app needs camera access to take pictures.</string>
          </config-file>
 
-         <preference name="PHOTOLIBRARY_USAGE_DESCRIPTION" default=" " />
-         <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
-             <string>$PHOTOLIBRARY_USAGE_DESCRIPTION</string>
-         </config-file>
-
-         <preference name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" default=" " />
-         <config-file target="*-Info.plist" parent="NSPhotoLibraryAddUsageDescription">
-             <string>$PHOTOLIBRARY_ADD_USAGE_DESCRIPTION</string>
-         </config-file>
-
-         <preference name="MICROPHONE_USAGE_DESCRIPTION" default=" " />
-         <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
-             <string>$MICROPHONE_USAGE_DESCRIPTION</string>
-         </config-file>
 
          <config-file target="*-Info.plist" parent="PHPhotoLibraryPreventAutomaticLimitedAccessAlert">
             <true/>
