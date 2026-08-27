@@ -107,34 +107,38 @@
       </platform>
 
      <!-- ios -->
-     <platform name="ios">
-         <config-file target="config.xml" parent="/*">
-             <feature name="Camera">
-                 <param name="ios-package" value="OSCamera" />
-             </feature>
-             <preference name="SwiftVersion" value="5" />
-         </config-file>
+     <!-- ios -->
+<platform name="ios">
 
-         <!-- CAMERA PERMISSION -->
-    <edit-config target="NSCameraUsageDescription"
-                 file="*-Info.plist"
-                 mode="merge">
-        <string>This app needs access to the camera to take pictures of the user and valid Id's.</string>
+    <config-file target="config.xml" parent="/*">
+        <feature name="Camera">
+            <param name="ios-package" value="OSCamera" />
+        </feature>
+
+        <preference name="SwiftVersion" value="5" />
+    </config-file>
+
+    <!-- CAMERA PERMISSION ONLY -->
+    <edit-config
+        target="NSCameraUsageDescription"
+        file="*-Info.plist"
+        mode="merge">
+        <string>This app needs access to the camera to take pictures of the user and valid IDs.</string>
     </edit-config>
 
+    <source-file src="src/ios/OSCamera.swift" />
+    <source-file src="src/ios/OSCAMRChooseGalleryParameters.swift" />
+    <source-file src="src/ios/OSCAMREditPictureParameters.swift" />
+    <source-file src="src/ios/OSCAMRPlayVideoParameters.swift" />
+    <source-file src="src/ios/OSCAMRRecordVideoParameters.swift" />
+    <source-file src="src/ios/OSCAMRTakePictureParameters.swift" />
 
-         <config-file target="*-Info.plist" parent="PHPhotoLibraryPreventAutomaticLimitedAccessAlert">
-            <true/>
-         </config-file>
+    <framework
+        src="src/ios/frameworks/OSCameraLib.xcframework"
+        embed="true"
+        custom="true" />
 
-         <source-file src="src/ios/OSCamera.swift" />
-         <source-file src="src/ios/OSCAMRChooseGalleryParameters.swift" />
-         <source-file src="src/ios/OSCAMREditPictureParameters.swift" />
-         <source-file src="src/ios/OSCAMRPlayVideoParameters.swift" />
-         <source-file src="src/ios/OSCAMRRecordVideoParameters.swift" />
-         <source-file src="src/ios/OSCAMRTakePictureParameters.swift" />
-         <framework src="src/ios/frameworks/OSCameraLib.xcframework" embed="true" custom="true" />
-     </platform>
+</platform>
 
    <!-- browser -->
     <platform name="browser">
